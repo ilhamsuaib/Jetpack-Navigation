@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Jetpack Navi</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="go_to_first">Go To First</string>
+    <string name="go_to_second">Go To Second</string>
+</resources>
