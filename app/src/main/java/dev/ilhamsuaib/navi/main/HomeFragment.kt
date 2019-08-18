@@ -30,10 +30,14 @@ class HomeFragment : Fragment() {
     private fun setupView() = view?.run {
         val navController = (context as Activity).findNavController(R.id.mainNavHost)
         btnGoToFirst.setOnClickListener {
-            navController.navigate(R.id.actionGoToFirstFragment)
+            navController.navigate(R.id.actionGoToFirstFragment, Bundle().apply {
+                putString("name", "Ilham at First Fragment")
+            })
         }
         btnGoToSecond.setOnClickListener {
-            navController.navigate(R.id.actionGoToSecondFragment)
+            navController.navigate(R.id.actionGoToSecondFragment, Bundle().apply {
+                putString("name", "Ilham at Second Fragment")
+            })
         }
     }
 }
