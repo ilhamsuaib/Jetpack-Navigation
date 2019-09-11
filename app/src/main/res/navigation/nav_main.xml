@@ -1,26 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_main"
-    app:startDestination="@id/mainFragment">
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/nav_main"
+   app:startDestination="@id/homeContainerFragment">
 
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="dev.ilhamsuaib.navi.main.MainFragment"
-        android:label="MainFragment">
-        <action
-            android:id="@+id/actionGoToFirstFragment"
-            app:destination="@id/firstFragment" />
-        <action
-            android:id="@+id/actionGoToSecondFragment"
-            app:destination="@id/secondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/firstFragment"
-        android:name="dev.ilhamsuaib.navi.FirstFragment"
-        android:label="FirstFragment" />
-    <fragment
-        android:id="@+id/secondFragment"
-        android:name="dev.ilhamsuaib.navi.SecondFragment"
-        android:label="SecondFragment" />
+   <fragment
+      android:id="@+id/homeContainerFragment"
+      android:name="dev.ilhamsuaib.navi.home.HomeContainerFragment"
+      android:label="Home"
+      tools:layout="@layout/fragment_home_container">
+      <action
+         android:id="@+id/action_to_fist_step"
+         app:destination="@id/firstStepFragment" />
+      <action
+         android:id="@+id/action_to_other_dest"
+         app:destination="@id/otherDestFragment" />
+   </fragment>
+
+   <fragment
+      android:id="@+id/firstStepFragment"
+      android:name="dev.ilhamsuaib.navi.step.FirstStepFragment"
+      android:label="First Step Fragment"
+      tools:layout="@layout/fragment_first_step">
+      <action
+         android:id="@+id/action_to_second_step"
+         app:destination="@id/secondStepFragment" />
+   </fragment>
+
+   <fragment
+      android:id="@+id/otherDestFragment"
+      android:name="dev.ilhamsuaib.navi.OtherDestFragment"
+      android:label="Other Fragment"
+      tools:layout="@layout/fragment_other_dest" />
+
+   <fragment
+      android:id="@+id/secondStepFragment"
+      android:name="dev.ilhamsuaib.navi.step.SecondStepFragment"
+      android:label="Second Step Fragment"
+      tools:layout="@layout/fragment_second_step">
+      <action
+         android:id="@+id/action_third_step"
+         app:destination="@id/thirdStepFragment" />
+   </fragment>
+
+   <fragment
+      android:id="@+id/thirdStepFragment"
+      android:name="dev.ilhamsuaib.navi.step.ThirdStepFragment"
+      android:label="Third Step Fragment"
+      tools:layout="@layout/fragment_third_step" />
 </navigation>

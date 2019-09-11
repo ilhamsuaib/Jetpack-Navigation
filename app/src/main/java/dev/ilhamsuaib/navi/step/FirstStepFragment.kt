@@ -1,4 +1,4 @@
-package dev.ilhamsuaib.navi.main
+package dev.ilhamsuaib.navi.step
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,9 +12,9 @@ import dev.ilhamsuaib.navi.R
  * github.com/ilhamsuaib
  */
 
-class ProfileFragment : Fragment() {
+class FirstStepFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        return inflater.inflate(R.layout.fragment_first_step, container, false)
     }
 }
