@@ -1,4 +1,4 @@
-package dev.ilhamsuaib.navi.home
+package dev.ilhamsuaib.navi.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -30,14 +30,5 @@ class HomeContainerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val homeNavController: NavController = requireActivity().findNavController(R.id.homeContainerNavHost)
-
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.homeContainerNavHost)!!
-        val navigator = KeepStateNavigator(requireContext(), navHostFragment.childFragmentManager, R.id.homeContainerNavHost)
-        homeNavController.navigatorProvider.plusAssign(navigator)
-        homeNavController.setGraph(R.navigation.nav_home)
-
-        view.bottomNav.setupWithNavController(homeNavController)
     }
 }

@@ -3,6 +3,7 @@ package dev.ilhamsuaib.navi.adapter
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import dev.ilhamsuaib.navi.R
+import dev.ilhamsuaib.navi.common.loadImage
 import kotlinx.android.synthetic.main.item_home.view.*
 
 /**
@@ -16,8 +17,9 @@ class HomeAdapter(private val onClick: (String) -> Unit) : Item() {
         viewHolder.itemView.run {
             val item = "Item ${position.plus(1)}"
 
-            tvItemName.text = item
+            tvName.text = item
             setOnClickListener { onClick(item) }
+            imgAvatar.loadImage(R.drawable.img_avatar)
         }
     }
 

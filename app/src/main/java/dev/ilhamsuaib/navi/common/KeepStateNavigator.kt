@@ -49,6 +49,7 @@ class KeepStateNavigator(
         transaction.setReorderingAllowed(true)
         transaction.commitNow()
 
+        println("is initialNavigate : $initialNavigate")
         return if (initialNavigate) {
             destination
         } else {

@@ -1,4 +1,4 @@
-package dev.ilhamsuaib.navi.home
+package dev.ilhamsuaib.navi.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

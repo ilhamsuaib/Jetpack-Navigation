@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:app="http://schemas.android.com/apk/res-auto"
-   xmlns:tools="http://schemas.android.com/tools"
-   android:id="@+id/nav_home"
-   app:startDestination="@id/homeFragment">
-   <keep_state_fragment
-      android:id="@+id/homeFragment"
-      android:name="dev.ilhamsuaib.navi.home.HomeFragment"
-      android:label="HomeFragment"
-      tools:layout="@layout/fragment_home" />
-   <keep_state_fragment
-      android:id="@+id/notificationFragment"
-      android:name="dev.ilhamsuaib.navi.home.NotificationFragment"
-      android:label="NotificationFragment"
-      tools:layout="@layout/fragment_notification" />
-   <keep_state_fragment
-      android:id="@+id/profileFragment"
-      android:name="dev.ilhamsuaib.navi.home.ProfileFragment"
-      android:label="ProfileFragment"
-      tools:layout="@layout/fragment_profile" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="dev.ilhamsuaib.navi.ui.home.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_home_to_firstStepFragment"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="dev.ilhamsuaib.navi.ui.detail.DetailFragment"
+        android:label="Detail Fragment"
+        tools:layout="@layout/fragment_detail">
+        <deepLink app:uri="www.ilhamsuaib.dev" />
+        <deepLink app:uri="dl://ilhamsuaib.dev/{name}" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="dev.ilhamsuaib.navi.ui.step.FirstFragment"
+        android:label="@string/first_step_fragment"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:popUpTo="@+id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="dev.ilhamsuaib.navi.ui.step.SecondFragment"
+        android:label="SecondFragment">
+        <argument
+            android:name="person"
+            android:defaultValue="@null"
+            app:argType="dev.ilhamsuaib.navi.model.Person"
+            app:nullable="true" />
+    </fragment>
+
 </navigation>

@@ -5,4 +5,7 @@
     <string name="profile">Profile</string>
     <string name="go_to_first">Go To First Step Fragment</string>
     <string name="go_to_other">Go To Other Fragment</string>
+    <string name="next">Next</string>
+    <string name="first_step_fragment">First Step Fragment</string>
+    <string name="second_step_fragment">Second Step Fragment</string>
 </resources>
