@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import dev.ilhamsuaib.navi.R
-import dev.ilhamsuaib.navi.common.toast
+import kotlinx.android.synthetic.main.fragment_detail.view.*
 
 /**
  * Created by @ilhamsuaib on 2019-08-18.
@@ -15,6 +15,8 @@ import dev.ilhamsuaib.navi.common.toast
  */
 
 class DetailFragment : Fragment() {
+
+    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,8 +30,16 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        //from implicit deepLink
         val mIntent = activity?.intent
         val uri = mIntent?.data
-        toast("Uri : ${uri.toString()}")
+        uri?.let {
+            view.tvDetail.text = it.toString()
+        }
+
+        //from safe args or explicit deepLink
+        args.name?.let {
+            view.tvDetail.text = it
+        }
     }
 }

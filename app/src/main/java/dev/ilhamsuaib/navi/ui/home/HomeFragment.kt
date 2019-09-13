@@ -1,6 +1,5 @@
 package dev.ilhamsuaib.navi.ui.home
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,7 +52,8 @@ class HomeFragment : Fragment() {
         homeAdapter.clear()
         repeat(30) {
             homeAdapter.add(HomeAdapter {
-                findNavController().navigate(R.id.action_home_to_detailFragment)
+                val action = HomeFragmentDirections.actionHomeToDetailFragment(it)
+                findNavController().navigate(action)
             })
         }
     }

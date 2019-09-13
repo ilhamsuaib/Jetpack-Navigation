@@ -16,14 +16,24 @@
             android:id="@+id/action_home_to_firstStepFragment"
             app:destination="@id/firstFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="dev.ilhamsuaib.navi.ui.detail.DetailFragment"
         android:label="Detail Fragment"
         tools:layout="@layout/fragment_detail">
-        <deepLink app:uri="www.ilhamsuaib.dev" />
-        <deepLink app:uri="dl://ilhamsuaib.dev/{name}" />
+
+        <deepLink app:uri="dl://www.example.com/{name}" />
+        <deepLink app:uri="www.example.com" />
+        <deepLink app:uri="www.example.com/{name}" />
+
+        <argument
+            android:name="name"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
+
     <fragment
         android:id="@+id/firstFragment"
         android:name="dev.ilhamsuaib.navi.ui.step.FirstFragment"
